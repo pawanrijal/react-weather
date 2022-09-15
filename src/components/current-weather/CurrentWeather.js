@@ -1,13 +1,15 @@
 import "./current-weather.css";
 
 const CurrentWeather = (props) => {
+  const imgSrc=`icons/${props.iconName}.png`;
   return (
     <div className="weather">
       <div className="top">
         <p className="city">{props.city}</p>
         <p className="weather-description">{props.desc}</p>
 
-        <img alt="weather" className="weather-icon" src="icons/01d.png"></img>
+        <img alt="weather" className="weather-icon" src={imgSrc}/>
+       
       </div>
 
       <div className="bottom">

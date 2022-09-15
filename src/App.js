@@ -15,7 +15,7 @@ function App() {
   const [pressure,setPressure]=useState(null);
   const[show,setShow]=useState(false);
  
-  const imgSrc=`icons/${iconName}.png`;
+  
 
 
 
@@ -37,23 +37,25 @@ function App() {
           response.weather.forEach(element => {
             setDescription(element.description);
             setIconName(element.icon)
+           
           });
           setWind(response.wind.speed);
           setHumidity(response.humidity);
           setPressure(response.pressure);
       })
     .catch((err) => console.error(err));
-  
+   
 
 
 
-    
+   
   }
+  const imgSrc=`icons/${iconName}.png`;
   return (
     <div className="container">
       <Search onSearchChange={handleOnSearchChange} />
       
-      {show?<CurrentWeather temp={temp} feelsLike={feelsLike} city={city} desc={description} imgSrc={imgSrc} wind={wind} humidity={humidity} pressure={pressure}/>:<></>}
+      {show?<CurrentWeather temp={temp} feelsLike={feelsLike} city={city} desc={description} iconName={iconName} wind={wind} humidity={humidity} pressure={pressure}/>:<></>}
     </div>
   );
 }
