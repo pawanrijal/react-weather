@@ -40,8 +40,9 @@ function App() {
            
           });
           setWind(response.wind.speed);
-          setHumidity(response.humidity);
-          setPressure(response.pressure);
+          setHumidity(response.main.humidity);
+          setPressure(response.main.pressure);
+          console.log(response);
       })
     .catch((err) => console.error(err));
    

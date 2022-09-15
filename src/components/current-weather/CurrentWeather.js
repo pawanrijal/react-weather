@@ -33,12 +33,13 @@ const CurrentWeather = (props) => {
           </div>
           <div className="parameter-row">
             <span className="parameter-label">Humidity</span>
-            <span className="parameter-value">{props.humidity}</span>
+            {console.log(props)}
+            <span className="parameter-value">{props.humidity}%</span>
           </div>
         
         <div className="parameter-row">
           <span className="parameter-label">Pressure</span>
-          <span className="parameter-value">{props.pressure}</span>
+          <span className="parameter-value">{props.pressure}mmHg</span>
         </div>
         </div>
       </div>
